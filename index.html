@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="knlogo.png">
+	<link rel="stylesheet" href="intro.css">
+	<link rel="stylesheet" href="sliderstyle.css">
+	<link rel="stylesheet" href="cursorp.css">
+    <title>Karali Nakliyat</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: black;
+            color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            z-index: 1000;
+            transition: background 0.3s ease, color 0.3s ease;
+			opacity: 0.83;
+        }
+
+        .navbar img {
+            height: 53px;
+        }
+
+        .navbar a {
+            color: white;
+            padding: 0 1rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #f0a500;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .home {
+            background: url('home-bg.png') no-repeat center center/cover;
+            height: 100vh;
+            position: relative;
+            color: black;
+        }
+
+        .home h1 {
+            margin-top: 19vh;
+            font-size: 3rem;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        .home p {
+            font-size: 1.2rem;
+            margin-top: -7px;
+            animation: fadeInUp 2s ease-in-out 0.5s;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .image-box {
+            width: 13%;
+            margin: 1rem;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            background: #fff;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .image-box img {
+            width: 100%;
+            border-radius: 21px;
+        }
+
+        .image-box p {
+            margin-top: 1rem;
+            color: #333;
+        }
+
+        .image-box:hover {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
+
+        .about, .contact {
+            background: #fff;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            margin: 2rem auto;
+            width: 80%;
+        }
+
+        .about h2, .contact h2 {
+            margin-bottom: 2rem;
+            color: #333;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        .about p, .contact p {
+            margin-bottom: 1rem;
+            color: #666;
+            animation: fadeInUp 2s ease-in-out 0.5s;
+        }
+
+        .separator {
+            height: 4rem;
+            background: #292929;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .pattern {
+            background: url('pattern.png');
+            opacity: 0.2;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .spacer {
+            position: relative;
+            overflow: hidden;
+            background: #f4f4f4;
+        }
+
+        .spacer::before, .spacer::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: #202020;
+            border-radius: 50%;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .spacer::before {
+            top: 50px;
+            left: 50px;
+        }
+
+        .spacer::after {
+            bottom: 50px;
+            right: 50px;
+        }
+
+        .contact .buttons {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .contact .buttons a {
+            display: inline-block;
+            background: #5e5e5e;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+			animation: fadeInUp 2s ease-in-out;
+        }
+
+        .contact .buttons a:hover {
+            background: #888888;
+        }
+
+        .contact .buttons a img {
+            vertical-align: middle;
+            margin-right: 0.5rem;
+            width: 50px;
+            height: 50px;
+        }
+
+        .copyright {
+            background: #fff;
+            padding: 5rem 2rem;
+            position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            margin: 2rem auto;
+            width: 80%;
+			animation: fadeInUp 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+	<div class="overlay">
+        <img src="kntlogo.png" alt="Logo" class="logo">
+    </div>
+	
+	<div class="yuvarlak" id="yuvarlak"></div>
+	
+    <nav class="navbar">
+        <img src="knlogo.png" alt="Logo">
+        <div>
+            <a href="#home">Ana Sayfa</a>
+            <a href="#about">Hakkımızda</a>
+            <a href="#contact">İletişim</a>
+        </div>
+    </nav>
+	
+    <section id="home" class="section home fade-in">
+        <div class="pattern"></div>
+        <h1>Karali Nakliyat</h1>
+        <p>Güvenilir ve Hızlı...</p>
+        <div class="image-container">
+            <div class="image-box">
+                <img src="image1.png" alt="Nakliye Resmi 1">
+                <p>Tecrübe</p>
+            </div>
+            <div class="image-box">
+                <img src="image2.png" alt="Nakliye Resmi 2">
+                <p>Güven</p>
+            </div>
+            <div class="image-box">
+                <img src="image3.png" alt="Nakliye Resmi 3">
+                <p>Hız</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="separator">Hakkımızda</div>
+
+    <section id="about" class="section about fade-in">
+        <h2>Hakkımızda</h2>
+        <p>Biz nakliye sektöründe önde gelen firmalardan biriyiz. Müşterilerimize en iyi hizmeti sunmayı amaçlıyoruz.</p>
+        <h2>Misyonumuz</h2>
+        <p>Güvenilir ve hızlı nakliye hizmetleri sunarak müşteri memnuniyetini en üst seviyeye çıkarmak.</p>
+    </section>
+
+    <div class="spacer"></div>
+
+    <div class="separator">İletişim</div>
+
+    <section id="contact" class="section contact fade-in">
+        <h2>İletişim</h2>
+        <p>Adres | Esenşehir Mahallesi, Mine Sokak, No: 37 İstanbul/Ümraniye</p>
+        <p>Telefon | +90 536 480 53 57</p>
+        <p>Mail | hskarali53@gmail.com</p>
+        <div class="buttons">
+            <a href="mailto:hskarali53@gmail.com?subject=Merhaba,">
+                <img src="email-icon.png" alt="Email"> Email
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=905364805357" target="_blank">
+                <img src="whatsapp-icon.png" alt="WhatsApp"> WhatsApp
+            </a>
+        </div>
+    </section>
+    <div class="copyright">Karali Nakliyat © 2024 Tüm hakları saklıdır.</div>
+	
+	<script src="intro.js"></script>
+	<script src="cursorp.js"></script>
+</body>
+</html>
