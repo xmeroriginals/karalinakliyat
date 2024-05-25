@@ -348,6 +348,42 @@
 				width: calc(100% - 2rem); /* Ekran genişliği 480 piksel ve altında, tek sütunlu düzenleme */
 			}
 		}
+		
+		@media only screen and (max-width: 768px) {
+            .navbar a {
+                padding: 0.5rem 1rem; /* Menü öğesi boyutları azaltıldı */
+            }
+
+            .home h1 {
+                font-size: 2.5rem; /* Ana başlık boyutu azaltıldı */
+            }
+
+            .home p {
+                font-size: 1rem; /* Ana sayfa metni boyutu azaltıldı */
+            }
+
+            .section {
+                padding: 3rem 1rem; /* Bölüm padding'leri azaltıldı */
+            }
+
+            .image-box {
+                width: 80%; /* Resim kutusu boyutu azaltıldı */
+            }
+
+            .contact .buttons {
+                flex-direction: column; /* İletişim butonlarının yönü düzeltildi */
+                margin-top: 1rem; /* İletişim butonları arası boşluk azaltıldı */
+            }
+
+            .contact .buttons a {
+                margin-bottom: 1rem; /* İletişim butonları arası boşluk azaltıldı */
+            }
+
+            .spacer::before,
+            .spacer::after {
+                display: none; /* Spacer görselleri mobilde gizlendi */
+            }
+        }
 
     </style>
 </head>
