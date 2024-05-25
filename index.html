@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/png" href="knlogo.png">
-	<link rel="stylesheet" href="intro.css">
-	<link rel="stylesheet" href="sliderstyle.css">
-	<link rel="stylesheet" href="cursorp.css">
+    <link rel="icon" type="image/png" href="knlogo.png">
+    <link rel="stylesheet" href="intro.css">
+    <link rel="stylesheet" href="sliderstyle.css">
+    <link rel="stylesheet" href="cursorp.css">
     <title>Karali Nakliyat</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
@@ -35,7 +35,7 @@
             padding: 1rem 2rem;
             z-index: 1000;
             transition: background 0.3s ease, color 0.3s ease;
-			opacity: 0.83;
+            opacity: 0.83;
         }
 
         .navbar img {
@@ -51,7 +51,7 @@
         }
 
         .navbar a:hover {
-            color: #f0a500;
+            color: #535353;
         }
 
         .section {
@@ -97,22 +97,34 @@
 
         .image-box img {
             width: 100%;
+			height: auto;
             border-radius: 21px;
-        }
-
-        .image-box p {
-            margin-top: 1rem;
-            color: #333;
         }
 
         .image-box:hover {
             transform: scale(1.05);
             opacity: 0.8;
         }
+		
+		.contact-extra-images .image-box img {
+            width: 100%;
+            height: auto;
+            padding-bottom: 3%;
+            object-fit: 5%;
+            border-radius: 15;
+			margin-top: auto;
+        }
+		
+		.contact-extra-images {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
 
         .about, .contact {
             background: #fff;
-            padding: 5rem 2rem;
+            padding: 3rem 2rem;
             position: relative;
             overflow: hidden;
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
@@ -188,6 +200,7 @@
         }
 
         .contact .buttons {
+			text-align: center;
             margin-top: 2rem;
             display: flex;
             justify-content: center;
@@ -196,40 +209,77 @@
 
         .contact .buttons a {
             display: inline-block;
-            background: #5e5e5e;
+            background: #393939;
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
             transition: background 0.3s ease;
-			animation: fadeInUp 2s ease-in-out;
+            animation: fadeInUp 2s ease-in-out;
         }
 
         .contact .buttons a:hover {
-            background: #888888;
+            background: #535353;
         }
 
         .contact .buttons a img {
             vertical-align: middle;
-            margin-right: 0.5rem;
+            margin-right: auto;
             width: 50px;
             height: 50px;
+        }
+
+        .contact-extra-images {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+            gap: 1rem;
+			lign-items: center;
+        }
+
+        .contact-extra-images .image-box {
+            width: 20%;
+            margin: 23px;
+			margin-bottom: auto;
+			lign-items: center;
         }
 
         .copyright {
             background: #fff;
             padding: 5rem 2rem;
             position: relative;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             overflow: hidden;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
             border-radius: 10px;
             margin: 2rem auto;
             width: 80%;
+			display: block;
+			margin: 0 auto;
+			margin-bottom: -199px; 
+            animation: fadeInUp 2s ease-in-out;
+			padding-top: 0px;
+			top: -133px;
+        }
+		.underlogo {
+			background: #fff;
+			justify-content: center;
+			margin-top: -99px;
+			border-radius: 10px;
+			width: auto;
+			height: 33%;
 			animation: fadeInUp 2s ease-in-out;
+			margin-right: auto;
+			margin-left: auto;
+			text-align: center;
+		}
+		
+		.home .image-container {
+            display: flex;
+            justify-content: space-around 33px;
+            align-items: flex-start;
         }
 
         @keyframes fadeIn {
@@ -252,24 +302,43 @@
             }
         }
 
+        @media (max-width: 768px) {
+            .image-box {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-box {
+                width: 90%;
+            }
+        }
+		
+		@media (max-width: 768px) {
+            .home .image-container {
+                flex-direction: column; 
+                align-items: center;
+            }
+        }
     </style>
 </head>
 <body>
-	<div class="overlay">
+    <div class="overlay">
         <img src="kntlogo.png" alt="Logo" class="logo">
     </div>
-	
-	<div class="yuvarlak" id="yuvarlak"></div>
-	
+
+    <div class="yuvarlak" id="yuvarlak"></div>
+
     <nav class="navbar">
         <img src="knlogo.png" alt="Logo">
         <div>
             <a href="#home">Ana Sayfa</a>
             <a href="#about">Hakkımızda</a>
-            <a href="#contact">İletişim</a>
+            <a href="#gallery">Galeri</a>
+			<a href="#contact">İletişim</a>
         </div>
     </nav>
-	
+
     <section id="home" class="section home fade-in">
         <div class="pattern"></div>
         <h1>Karali Nakliyat</h1>
@@ -294,10 +363,26 @@
 
     <section id="about" class="section about fade-in">
         <h2>Hakkımızda</h2>
-        <p>Biz nakliye sektöründe önde gelen firmalardan biriyiz. Müşterilerimize en iyi hizmeti sunmayı amaçlıyoruz.</p>
+        <p>Karali Nakliyat olarak, sektörde edindiğimiz deneyim ve bilgi birikimi ile müşterilerimize en güvenilir ve hızlı nakliye hizmetini sunuyoruz. Uzman ekibimiz ve geniş araç filomuzla, her türlü nakliye ihtiyacınıza profesyonel çözümler üretiyoruz. Müşteri memnuniyeti odaklı çalışma prensibimizle, güven ve kaliteden ödün vermeden hizmet veriyoruz.</p>
         <h2>Misyonumuz</h2>
-        <p>Güvenilir ve hızlı nakliye hizmetleri sunarak müşteri memnuniyetini en üst seviyeye çıkarmak.</p>
+        <p>Müşterilerimize en yüksek kalitede nakliye hizmeti sunarak, onların güvenini ve memnuniyetini kazanmak. Her bir nakliyeyi özenle planlayıp, en kısa sürede ve güvenli bir şekilde tamamlamak. İnovatif çözümler ve teknolojilerle, nakliye süreçlerini daha verimli ve etkili hale getirerek, sektörde öncü bir konumda olmak. Çevreye duyarlı ve sürdürülebilir nakliye yöntemleri ile geleceğe katkıda bulunmak.</p>
     </section>
+	
+	<div class="separator">Galeri</div>
+	
+	<section id="gallery" class="section about fade-in">
+		<div class="contact-extra-images">
+			<div class="image-box">
+				<img src="image4.jpg" alt="Ek Resim 1">
+			</div>
+			<div class="image-box">
+				<img src="image5.jpg" alt="Ek Resim 2">
+			</div>
+			<div class="image-box">
+				<img src="image6.jpg" alt="Ek Resim 1">
+			</div>
+		</div>
+	</section>
 
     <div class="spacer"></div>
 
@@ -309,17 +394,19 @@
         <p>Telefon | +90 536 480 53 57</p>
         <p>Mail | hskarali53@gmail.com</p>
         <div class="buttons">
-            <a href="mailto:hskarali53@gmail.com?subject=Merhaba,">
-                <img src="email-icon.png" alt="Email"> Email
-            </a>
-            <a href="https://api.whatsapp.com/send?phone=905364805357" target="_blank">
-                <img src="whatsapp-icon.png" alt="WhatsApp"> WhatsApp
-            </a>
-        </div>
+			<a href="hskarali53@gmail.com"><img src="email-icon.png" alt="Email"></a>
+			<a href="https://wa.me/905364805357"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
+		</div>
     </section>
-    <div class="copyright">Karali Nakliyat © 2024 Tüm hakları saklıdır.</div>
 	
-	<script src="intro.js"></script>
-	<script src="cursorp.js"></script>
+	<section id="contact" class="section contact fade-in">
+			<div class="underlogo">
+				<img src="knntlogo.png" alt="Logo">
+			</div>
+		<div class="copyright">Karali Nakliyat © 2024 Tüm hakları saklıdır.</div>
+	</section>
+	
+    <script src="intro.js"></script>
+    <script src="cursorp.js"></script>
 </body>
 </html>
