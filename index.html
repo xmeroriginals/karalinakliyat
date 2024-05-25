@@ -96,10 +96,9 @@
         }
 
         .image-box img {
-            width: 100%;
-			height: auto;
-            border-radius: 21px;
-        }
+			max-width: 100%; /* Resimlerin maksimum genişliği ekran genişliği kadar olsun */
+			height: auto; /* Oranları korumak için */
+		}
 
         .image-box:hover {
             transform: scale(1.05);
@@ -107,16 +106,25 @@
         }
 		
 		.contact-extra-images .image-box img {
-            width: 100%;
-            height: auto;
+			width: calc(33.33% - 2rem); /* Galeri resimlerinin genişliği artırıldı */
+			margin-bottom: 2rem;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			text-align: center;
+            width: 150%;
+			height: auto;
             padding-bottom: 3%;
             object-fit: 5%;
             border-radius: 15;
 			margin-top: auto;
+			justify-content: space-around;
         }
 		
 		.contact-extra-images {
-            display: flex;
+			text-align: center;
+			width: 100%;
+			height: auto;
+            display: center;
             justify-content: space-around;
             flex-wrap: wrap;
             margin-top: 3rem;
@@ -205,6 +213,7 @@
             display: flex;
             justify-content: center;
             gap: 1rem;
+			text-align: center;
         }
 
         .contact .buttons a {
@@ -231,16 +240,23 @@
         }
 
         .contact-extra-images {
-            display: flex;
-            justify-content: center;
-            margin-top: 3rem;
-            gap: 1rem;
-			lign-items: center;
-        }
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			margin-top: 3rem;
+			padding: 0 1rem;
+		}	
+		
+		.contact-extra-images img {
+			width: calc(33.33% - 2rem); /* 3 sütunlu ve aralarında 1rem boşluk bırakarak düzenleme */
+			margin-bottom: 2rem;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
 
         .contact-extra-images .image-box {
             width: 20%;
-            margin: 23px;
+            margin: 55px;
 			margin-bottom: auto;
 			lign-items: center;
         }
@@ -320,6 +336,19 @@
                 align-items: center;
             }
         }
+		
+		@media only screen and (max-width: 768px) {
+			.contact-extra-images .image-box {
+				width: calc(50% - 2rem); /* Ekran genişliği 768 piksel ve altında, 2 sütunlu düzenleme */
+			}
+		}
+
+		@media only screen and (max-width: 480px) {
+			.contact-extra-images .image-box {
+				width: calc(100% - 2rem); /* Ekran genişliği 480 piksel ve altında, tek sütunlu düzenleme */
+			}
+		}
+
     </style>
 </head>
 <body>
